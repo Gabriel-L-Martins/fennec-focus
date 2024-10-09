@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FennecFocus: All-in-One Study App
 
-## Getting Started
+## Features
+- Study Calculator ("time for each subject")
+- Organizer
+- Pomodoro Timer and Cronometer
+- Five Minutes Task Start
+- Background Sound Effects (rain, fire, forest, etc.)
+- Music
 
-First, run the development server:
+## Components
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Timer
+- [Ignite-Timer](https://github.com/PabloXT14/Ignite-Timer)
+- [Focus Timer 2.0](https://github.com/fernandoalvesrufino/focus-timer-2.0)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Study Calculator
+- [Video Explanation](https://youtu.be/AjU0UmGHm2Q)
+- Lucid react icons support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Routine Writer
+- Connected with Study Calculator
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### System for Courses
+- Library for importing content from others (like tables and more)
 
-## Learn More
+### User-Created Libraries
+- Libraries and plugins created by the users
+- Themes
 
-To learn more about Next.js, take a look at the following resources:
+## Shop System
+- Earn coins by completing work/activities
+- Purchase AI usage with coins
+- Affordable coin purchasing options
+- Premium Levels:
+  - Level 1: 20 AI usages per month
+  - Level 2: Unlimited AI usages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*Consider creative names for each level and coin to enhance the gamified experience*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tools
+- Refer to the e-book *Matematica em Evidencia* for AI tool ideas
 
-## Deploy on Vercel
+## Tech Stack
+- Supabase for login and database storage
+- Next.js
+- DaisyUI
+- Tailwind CSS
+- TypeScript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Setup Options
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+When setting up the project, the following options were chosen:
+- **ESLint:** Yes
+- **Tailwind CSS:** Yes
+- **`src/` directory:** Yes
+- **App Router:** Yes
+- **Import alias:** @/*
+
+---
+
+*More features and components will be added as the project evolves.*
