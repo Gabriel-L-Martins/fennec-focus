@@ -9,6 +9,12 @@ const Login: React.FC = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
+
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -36,9 +42,13 @@ const Login: React.FC = () => {
                         <Mail/>
                     </label>
                     <label className="input input-bordered flex justify-between items-center text-secondary-content">
-                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type={passwordVisible ? 'text' : 'password'} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Lock/>
                     </label>
+                    <div className='flex justify-between'>
+                        <a className='link link-hover ml-1 text-sm'>Forgot Password?</a>
+                        <input type="checkbox" className='checkbox' onChange={togglePasswordVisibility}/>
+                    </div>
                     <button className='btn btn-primary'>Login</button>
                     <div className='flex justify-center'>
                         <span className='text-primary-content text-sm'>Don't have an account? <a href='/register' className='link'>Sign Up Now</a></span>
