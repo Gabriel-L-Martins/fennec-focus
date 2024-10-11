@@ -1,6 +1,5 @@
 import { Home, Lock, Mail, User } from 'lucide-react';
 import React from 'react';
-import ThemeToggle from '../components/theme-toggle';
 
 const Register: React.FC = () => {
     return (
