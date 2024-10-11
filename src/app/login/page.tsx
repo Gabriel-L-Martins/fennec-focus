@@ -51,7 +51,7 @@ const Login: React.FC = () => {
                     </div>
                     <button className='btn btn-primary'>Login</button>
                     <div className='flex justify-center'>
-                        <span className='text-primary-content text-sm'>Don't have an account? <a href='/register' className='link'>Sign Up Now</a></span>
+                        <span className='text-primary-content text-sm'>Don&apos;t have an account? <a href='/register' className='link'>Sign Up Now</a></span>
                     </div>
                 </form>
             </div>
