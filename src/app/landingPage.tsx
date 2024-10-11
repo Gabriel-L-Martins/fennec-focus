@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Navbar from './components/navbar';
 
 const LandingPage: React.FC = () => {
@@ -22,7 +23,7 @@ const LandingPage: React.FC = () => {
                         </a>
                     </div>
                 </div>
-                <img src="https://placehold.co/400x600" className='rounded-lg invert' />
+                <Image src="https://placehold.co/400x600" className='rounded-lg invert' alt='Placeholder' width={400} height={600}/>
             </div>
         </div>
     );
