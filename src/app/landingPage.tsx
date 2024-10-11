@@ -15,9 +15,11 @@ const LandingPage: React.FC = () => {
                         with Ease
                     </h1>
                     <div>
-                        <button className='btn btn-lg btn-wide btn-primary'>
-                            Start Now!
-                        </button>
+                        <a href='/register'>
+                            <button className='btn btn-lg btn-wide btn-primary'>
+                                Start Now!
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <img src="https://placehold.co/400x600" className='rounded-lg invert' />

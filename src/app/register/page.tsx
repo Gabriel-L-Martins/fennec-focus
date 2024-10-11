@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { supabase } from '../../../supabaseClient';
 
 const Register: React.FC = () => {
-    const [username, setUsername] = useState('');
+    const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -34,7 +34,7 @@ const Register: React.FC = () => {
                         {error && <p className='text-red-500'>{error}</p>}
                     </div>
                     <label className="input input-bordered flex justify-between items-center text-secondary-content">
-                        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                         <User />
                     </label>
                     <label className="input input-bordered flex justify-between items-center text-secondary-content">
