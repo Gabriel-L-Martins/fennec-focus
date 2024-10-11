@@ -48,7 +48,7 @@ const Register: React.FC = () => {
                         <Mail />
                     </label>
                     <label className="input input-bordered flex justify-between items-center text-secondary-content">
-                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type={passwordVisible ? 'text' : 'password'} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Lock />
                     </label>
                     <div className='flex justify-between'>
