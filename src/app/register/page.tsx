@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Lock, Mail, User } from 'lucide-react';
+import { Lock, Mail, User } from 'lucide-react';
 import React, { useState } from 'react';
 import { supabase } from '../../../supabaseClient';
 
