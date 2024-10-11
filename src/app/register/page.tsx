@@ -10,6 +10,12 @@ const Register: React.FC = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
+
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
         const { data, error } = await supabase.auth.signUp({
@@ -45,6 +51,10 @@ const Register: React.FC = () => {
                         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Lock />
                     </label>
+                    <div className='flex justify-between'>
+                        <a className='link link-hover ml-1 text-sm'>Forgot Password?</a>
+                        <input type="checkbox" className='checkbox' onChange={togglePasswordVisibility}/>
+                    </div>
                     <button className='btn btn-primary'>Register</button>
                     <div className='flex justify-center'>
                         <span className='text-primary-content text-sm'>Have an account? <a href='/login' className='link'>Sign In Now</a></span>
