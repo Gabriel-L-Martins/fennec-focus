@@ -23,7 +23,7 @@ const LandingPage: React.FC = () => {
                         </a>
                     </div>
                 </div>
-                <Image src="https://placehold.co/400x600" className='rounded-lg invert' alt='Placeholder' width={400} height={600}/>
+                <img src="https://placehold.co/400x600" className='rounded-lg invert' alt='Placeholder'/>
             </div>
         </div>
     );
