@@ -28,6 +28,10 @@
 - Libraries and plugins created by the users
 - Themes
 
+### Day Productivity
+- Calculates the productivity of your day based on a equation considering amount of hours working and "scrolling" (may add more factors to the equation after)
+- Option to add weekends to the equation
+
 ## Shop System
 - Earn coins by completing work/activities
 - Purchase AI usage with coins
