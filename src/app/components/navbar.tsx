@@ -4,38 +4,36 @@ import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import { User } from '@supabase/supabase-js';
+import { User, Session } from '@supabase/supabase-js'
+import { checkUserSession, onAuthStateChange } from '../../utils/auth'
 
 const Navbar: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-      const checkUserSession = async () => {
-          const { data: { session } } = await supabase.auth.getSession();
-          if (session) {
-              setUser(session.user);
-          }
-      };
+    const fetchUserSession = async () => {
+        const session = await checkUserSession();
+        if (session) {
+            setUser(session.user);
+        }
+    };
 
-      checkUserSession();
+    fetchUserSession();
 
-      const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-          if (event === 'SIGNED_OUT' || !session) {
-              setUser(null);
-          } else if (event === 'SIGNED_IN') {
-              setUser(session.user);
-          }
-      });
+    const { data: authListener } = onAuthStateChange((session: Session | null) => {
+        setUser(session?.user || null);
+    });
 
-      return () => {
-          authListener.subscription.unsubscribe();
-      };
-  }, []);
+    return () => {
+        authListener.subscription.unsubscribe();
+    };
+}, []);
 
-  const handleLogout = async () => {
-      await supabase.auth.signOut();
-      setUser(null);
-  };
+const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+};
+
   return (
     <nav className="border-b border-primary-content text-primary-content font-poppins z-50">
       <ul className="flex justify-between items-center p-4">
